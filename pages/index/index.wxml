@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="character">
+	<view class="character-view" wx:for="{{wiki}}">
+		<image class="character-ico" src="{{item[1]}}" bindtap="ico_click" data-Character-id="{{item[0]}}"></image>
+		<view class="character-name">
+			<text>{{item[6]}}</text></view>
+	</view>
+</view>

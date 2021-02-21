@@ -1,0 +1,4 @@
+<!--pages/characterPage/characterPage.wxml-->
+<view wx:for="{{personal}}">
+  {{item}}
+</view>
