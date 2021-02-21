@@ -1,15 +1,15 @@
 <?php
-$servername = "172.27.16.3";
-$username = "guest";
-$password = "lee01020304";
-// ´´½¨Á¬½Ó
+$servername = "servername";
+$username = "username";
+$password = "password";
+// Â´Â´Â½Â¨ÃÂ¬Â½Ã“
 $conn = mysqli_connect($servername, $username, $password);
 $conn->set_charset("utf8");
 ini_set("date.timezone", "PRC");
 
-// ¼ì²âÁ¬½Ó
+// Â¼Ã¬Â²Ã¢ÃÂ¬Â½Ã“
 if ($conn->connect_error) {
-    die("Á¬½ÓÊ§°Ü: " . $conn->connect_error);
+    die("error: " . $conn->connect_error);
 } 
 $sql="select * from wiki.character order by id";
 $res=$conn->query($sql);
