@@ -1,0 +1,170 @@
+/**app.wxss**/
+view{
+  font-size:28.96rpx;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.mainview{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.character-view{
+  /*background-color: red;*/
+  width: 187.5rpx;
+}
+.flex-row-warp{
+  flex-direction: row;
+  display : flex;
+  flex-wrap: wrap;
+}
+.flex-column-warp{
+  flex-direction: column;
+  display : flex;
+  flex-wrap: wrap;
+}
+
+.divLine{
+  background: #E0E3DA;
+  width: 100%;
+  height: 1rpx;
+ }
+.x-center{
+  justify-content: center;  /*水平*/
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.y-center{
+  align-items: center; /*垂直*/
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.x-right{
+  justify-content: flex-end;
+}
+
+.allcenter{
+  justify-content: center;  /*水平*/
+  align-items: center; /*垂直*/
+  margin: auto;
+}
+.marginpx{
+  margin-top:5.792rpx;
+  margin-bottom:5.792rpx;
+}
+.marginpx15{
+  margin-top:11.584rpx;
+  margin-bottom:11.584rpx;
+}
+
+
+.text-right {
+  text-align: right !important;
+}
+.text-left{
+  text-align: left;
+}
+
+
+.borderShadow{
+  border: 3.62rpx solid #909090;
+  border-radius: 18.1rpx;
+  border-style: none;
+  border-radius: 18.1rpx;
+  box-sizing: border-box;
+  vertical-align: middle;
+  background-color: rgba(255,255,255,.5);
+  box-shadow: rgba(0,0,0,.25) 3.62rpx 3.62rpx 3.62rpx 0rpx;
+}
+
+
+
+.marginlr{
+  margin-left: 14.48rpx;
+  margin-right: 14.48rpx;
+}
+.alignLeft{
+  margin:auto;
+  margin-left: 0;
+}
+.alignRight{
+  margin:auto;
+  margin-right: 0;
+}
+.m-0{
+  margin: 0 !important;
+}
+.float-left{
+  float: left !important;
+}
+.spico{
+  width:101.36rpx;
+  height:101.36rpx;
+}
+legend{
+  font-size: 43.44rpx;
+  line-height: inherit;
+  color: inherit;
+  white-space: normal;
+}
+.col-xl, .col-xl-auto, .col-xl-12, .col-xl-11, .col-xl-10, .col-xl-9, .col-xl-8, .col-xl-7, .col-xl-6, .col-xl-5, .col-xl-4, .col-xl-3, .col-xl-2, .col-xl-1, .col-lg, .col-lg-auto, .col-lg-12, .col-lg-11, .col-lg-10, .col-lg-9, .col-lg-8, .col-lg-7, .col-lg-6, .col-lg-5, .col-lg-4, .col-lg-3, .col-lg-2, .col-lg-1, .col-md, .col-md-auto, .col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1, .col-sm, .col-sm-auto, .col-sm-12, .col-sm-11, .col-sm-10, .col-sm-9, .col-sm-8, .col-sm-7, .col-sm-6, .col-sm-5, .col-sm-4, .col-sm-3, .col-sm-2, .col-sm-1, .col, .col-auto, .col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
+  position: relative;
+  width: 100%;
+  padding-right: 27.15rpx;
+  padding-left: 27.15rpx;
+}
+.col-sm-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.col-auto{
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+.col{
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-nowrap{
+  white-space: nowrap !important;
+}
+.font-weight-light {
+  font-weight: 300 !important;
+}
+.font-size-title {
+  font-size: 28.96rpx;
+}
+.display_none{
+  display: none;
+}
+.name {
+  color: #aaa;
+  font-size: 28.96rpx;
+  display: flex;
+  /* white-space:nowrap; */
+  overflow:visible;
+  width:173.76rpx;
+  
+}
+
+.ico {
+  width: 130.32rpx;
+  height: 130.32rpx;
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

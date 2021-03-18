@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="">
+	<view class="flex-row-warp">
+		<view class="character-view allcenter marginpx15" wx:for="{{wiki}}" >
+		<view class="allcenter">
+			<view class="allcenter"><image class="ico borderShadow" src="{{url}}{{item.ico}}" bindtap="ico_click" data-Character-id="{{item.chrid}}"></image></view>
+			<view class="name allcenter">
+				<view class="allcenter">{{item.name}}</view></view>
+		</view>
+		</view>
+	</view>
+</view>

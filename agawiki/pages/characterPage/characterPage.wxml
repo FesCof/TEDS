@@ -1,0 +1,385 @@
+<!--pages/characterPage/characterPage.wxml-->
+<view class="main" wx:if="{{nowlv.properties}}" style="margin-top:{{top}}px;">
+  <view class="title">
+      <image src="{{url}}{{chr.title}}" class="titlepic"></image>
+    </view>
+    <view class="row alignLeft marginpx allcenter">
+          <view id="lv1" bindtap="lv_click" class="lvbox media {{lv1class}}">
+            <image src="{{url}}{{level_1.miniico}}" class="lvico icobox">level1</image>
+          </view>
+          <view id="lv2" bindtap="lv_click" class="lvbox media {{lv2class}}">
+            <image src="{{url}}{{level_2.miniico}}" class="lvico icobox">level2</image>
+          </view>
+          <view id="lv3" bindtap="lv_click" class="lvbox media {{lv3class}}">
+            <image src="{{url}}{{level_3.miniico}}" class="lvico icobox">level3</image>
+          </view>
+          <view id="lv4" bindtap="lv_click" class="lvbox media {{lv4class}}">
+            <image src="{{url}}{{level_4.miniico}}" class="lvico icobox">level4</image>
+          </view>
+          <view id="lv5" bindtap="lv_click" class="lvbox {{lv5class}}">
+              <view class="media">
+                <image src="{{url}}{{level_5.miniico}}" class="x-center lvico icobox"></image>
+                <image src="{{url}}{{level_5.miniico_2}}" class="x-center lvmaxico"></image>
+            </view>
+          </view>
+
+          
+    </view>
+  <view class="mainview">
+    <view class="media view-info">
+        <view class="x-center">
+          <image src="{{url}}{{nowlv.pic}}" class="pic-img borderShadow" bindtap="pic_click" style="{{pic_change}}"></image>
+        </view>
+        <view class="info x-center">
+
+          <view class="marginpx">
+            <view class="marginpx15">
+              <view class="text-left">罗马字</view>
+              <view class="text-right col-auto">{{chr.romaname}}</view>
+            </view>
+            <view class="marginpx15">
+              <view class="text-left">注音假名</view>
+              <view class="text-right col-auto">{{chr.kananame}}</view>
+            </view>
+            <view class="marginpx15">
+              <view class="text-left">姓名</view>
+              <view class="text-right col-auto">{{chr.name}}</view>
+            </view>
+            <view class="marginpx15 row">
+                <text class="text-left">出生日期</text>
+                <text class="text-right col">{{chr.birthday}}</text>
+            </view>
+            <view class="marginpx15 row">
+                <text class="text-left">年龄</text>
+                <text class="text-right col">{{chr.age}}</text>
+            </view>
+            <view class="marginpx15 row">
+              <text class="text-left">身高</text>
+              <text class="text-right col">{{chr.height}} cm</text>
+            </view>
+            <view class="marginpx15 row">
+              <text class="text-left">血型</text>
+              <text class="text-right col">{{chr.bloodtype}}</text>
+            </view>
+            <view class="marginpx15 row">
+              <text class="text-left">职业</text>
+              <text class="text-right col">{{chr.job}}</text>
+            </view>
+          </view>
+        </view>
+        <view>
+          <view class="tab-view" style="{{info_button}}" bindtap="view_info_click">
+            <view class="tab-text-icon">简介</view>
+          </view>
+          <view class="tab-view" style="{{data_button}}" bindtap="view_data_click">
+            <view class="tab-text-icon">属性</view>
+          </view>
+          <view class="tab-view" style="{{equipment_button}}" bindtap="view_equipment_click">
+            <view class="tab-text-icon">装备</view>
+          </view>
+          <view class="tab-view" style="{{clothing_button}}" bindtap="view_clothing_click">
+            <view class="tab-text-icon">服装</view>
+          </view>
+          <view class="tab-view" style="{{ornament_button}}" bindtap="view_ornament_click">
+            <view class="tab-text-icon">饰品</view>
+          </view>
+        </view>
+    </view>
+    <view class="divLine"></view>
+    <!-- 分类窗口 -->
+    <!-- 简介 -->
+    <view style="{{view_info}};">
+      <view class="marginpx">
+      <view class="row marginpx">
+        <view class="info-title">
+          特长爱好
+        </view>
+        <view class="info-text">
+          <text>{{chr.love}}</text>
+        </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="row marginpx">
+        <view class="info-title">
+          将来的目标
+        </view>
+        <view class="info-text">
+          <text>{{chr.target}}</text>
+        </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="row marginpx">
+        <view class="info-title">
+          求职理由
+        </view>
+        <view class="info-text">
+          <text>{{chr.reason}}</text>
+        </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="row marginpx">
+         <view class="info-title">
+          自我介绍
+        </view>
+        <view class="info-text">
+          <text>{{chr.introduce}}</text>
+        </view>
+      </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="row marginpx">
+        <view class="info-title"></view>
+        <view class="row">
+          <view>
+            属性:
+          </view>      
+          <view>
+            {{chr.attribute}}
+          </view>
+        </view>
+        <view class="row alignRight">
+          <view>
+            得意:
+          </view>      
+          <view>
+            {{chr.good}}
+          </view>
+        </view>
+      </view>
+      <view class="divLine" style="margin-bottom:28.96rpx"></view>
+
+      <!-- combo折叠 -->
+      <view class="marginpx15" wx:if="{{combo}}">
+        <view wx:for="{{combo}}" wx:for-item="comboitem" wx:for-index="comboindex" style="margin-top:28.96rpx;margin-bottom:28.96rpx">
+          <view class="marginpx15 combo_view">
+            <view bindtap="showFrom" style="padding-top:14.48rpx;padding-bottom:14.48rpx;" data-param="{{comboindex}}" data-combofriends="{{comboitem}}">{{comboindex}}</view>
+            <view class="{{currentId == comboindex ? '' : 'display_none'}}">
+              <view class="divLine marginpx"></view>
+              <view class="flex-row-warp">
+                <view class="character-view allcenter flex-column-warp marginpx15" wx:for="{{thiscombolist}}" wx:for-item="thiscomboitem" wx:for-index="thiscomboindex">
+                  <image class="ico borderShadow" src="{{url}}{{thiscomboitem.ico}}" bindtap="ico_click" data-Character-id="{{thiscomboitem.chrid}}"></image>
+                  <view class="name allcenter">
+				            <text>{{thiscomboitem.name}}</text></view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+
+    <!-- 属性 -->
+    <view style="{{view_data}};">
+      <!-- SP技能 -->
+      <view class="marginpx">
+        <view class="media marginpx">
+          <view class="chrlvico">
+            <image src="{{url}}{{nowlv.ico}}" class="chrlvico"></image>
+          </view>
+          <view class="info">
+            <view class="row marginpx">
+              <view class="col-auto">Lv.</view>
+              <view class="col">{{nowlv.lv}}</view>
+            </view>
+            <view class="row marginpx">
+              <view class="col-auto">HP</view>
+              <view class="col">{{nowlv.hp}}</view>
+            </view>
+            <view class="row marginpx">
+              <view class="col-auto">L.ATK</view>
+              <view class="col">{{nowlv.l_atk}}</view>
+              <span class="{{now_properties}}  row">
+                <image src="{{now_properties_pic}}" class="{{now_properties}}"></image>
+                {{nowlv.properties_atk}}</span>
+            </view>
+            <view class="row marginpx">
+              <view class="col-auto">S.ATK</view>
+              <view class="col">{{nowlv.s_atk}}</view>
+              <span class="{{now_properties}} row">
+                <image src="{{now_properties_pic}}" class="{{now_properties}}"></image>
+                {{nowlv.properties_atk}}
+              </span>
+            </view>
+            <view class="row marginpx">
+              <view class="row">
+                <view class="col-auto">DEF</view>
+                <view class="col">{{nowlv.def}}</view>
+              </view>
+              <view class="row">
+                <view class="col-auto">SPD</view>
+                <view class="col">{{nowlv.spd}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="divLine"></view>
+      </view>
+      <view class="marginpx">
+      <view class="media">
+        <view class="marginpx marginlr">
+          <image src="{{url}}{{spico}}" class="spico">SP图标</image>
+        </view>
+        <view class="marginpx">
+            <view>
+              <legend class="m-0">
+                {{nowlv.spname}}
+              </legend>
+              <view class="row col-auto x-right" style="font-size: 28.96rpx;">
+                {{nowlv.spattribute}}
+                <image src="{{now_properties_pic}}" class="{{now_properties}} "></image>
+                <span class="{{now_properties}}">
+                  {{nowlv.properties}}
+                </span>
+              </view>
+            </view>
+            <view class="flex-row-warp">
+              <view class="col-auto text-center">次数:{{nowlv.sptimes}}</view>
+              <view class="col-auto text-center">时间：{{nowlv.spduration}}</view>
+              <view class="col-auto text-center">结合粒子需求量：{{nowlv.spneed}}</view>
+            </view>
+            <view>
+              {{nowlv.spinfo}}
+            </view>
+        </view>
+      </view>
+
+      <view class="media" style="{{sp2}}">
+        <view class="marginpx marginlr">
+          <image src="{{url}}{{sp2ico}}" class="spico">SP图标</image>
+        </view>
+          <view class="marginpx">
+            <view>
+              <legend class="m-0">
+                {{nowlv.sp2name}}
+              </legend>
+              <view class="row col-auto x-right" style="font-size: 28.96rpx;">
+                {{nowlv.sp2attribute}}
+                <image src="{{now_properties_pic}}" class="{{now_properties}} "></image>
+                <span class="{{now_properties}}">
+                  {{nowlv.properties}}
+                </span>
+              </view>
+            </view>
+            <view class="flex-row-warp">
+              <view class="col-auto text-center">次数:{{nowlv.sp2times}}</view>
+              <view class="col-auto text-center">时间：{{nowlv.sp2duration}}</view>
+              <view class="col-auto text-center">结合粒子需求量：{{nowlv.sp2need}}</view>
+            </view>
+            <view>
+              {{nowlv.sp2info}}
+            </view>
+          </view>
+      </view>
+      </view>
+      <view class="divLine"></view>
+      <!-- 被动技能 -->
+      <view class="marginpx">
+        <!-- 1~10 -->
+        <view>
+          <view class="media marginpx">
+            <view class="font-size-title col-auto font-weight-light" style="flex: 0 0 72.4rpx;">LV.1</view>
+            <view>
+              <view class="">{{nowlv.properties}}{{nowlv.skill1_1}}</view>
+              <view class="marginpx">{{nowlv.skill1_1_info}}</view>
+            </view>
+          </view>
+          <view class="media marginpx">
+            <view class="font-size-title col-auto font-weight-light" style="flex: 0 0 72.4rpx;">LV.1</view>
+            <view>
+              <view class="">{{nowlv.skill1_2}}</view>
+              <view class="marginpx">{{nowlv.skill1_2_info}}</view>
+            </view>
+          </view>
+          <view class="media marginpx">
+            <view class="font-size-title col-auto font-weight-light" style="flex: 0 0 72.4rpx;">LV.1</view>
+            <view>
+              <view class="">{{nowlv.skill1_3}}</view>
+              <view class="marginpx">{{nowlv.skill1_3_info}}</view>
+            </view>
+          </view>
+          <view class="media marginpx">
+            <view class="font-size-title col-auto font-weight-light" style="flex: 0 0 72.4rpx;">LV.5</view>
+            <view>
+              <view class="">{{nowlv.skill5}}</view>
+              <view class="marginpx">{{nowlv.skill5_info}}</view>
+            </view>
+          </view>
+          <view class="media marginpx">
+            <view class="font-size-title col-auto font-weight-light" style="flex: 0 0 72.4rpx;">LV.10</view>
+            <view>
+              <view class="">{{nowlv.skill10}}</view>
+              <view class="marginpx">{{nowlv.skill10_info}}</view>
+            </view>
+          </view>
+        </view>
+        <!-- 20 -->
+        <view class="media marginpx" wx:if="{{nowlv.skill20}}">
+            <view class="font-size-title col-auto font-weight-light" style="flex: 0 0 72.4rpx;">LV.20</view>
+            <view>
+              <view class="">{{nowlv.skill20}}</view>
+              <view class="marginpx">{{nowlv.skill20_info}}</view>
+            </view>
+        </view>
+        <!-- 35~50 -->
+        <view class="media marginpx" wx:if="{{nowlv.skill35}}">
+          <view class="font-size-title col-auto font-weight-light" style="flex: 0 0 72.4rpx;">LV.35</view>
+          <view>
+            <view class="">{{nowlv.skill35}}</view>
+            <view class="marginpx">{{nowlv.skill35_info}}</view>
+          </view>
+        </view>
+        <view class="media marginpx" wx:if="{{nowlv.skill50}}">
+          <view class="font-size-title col-auto font-weight-light" style="flex: 0 0 72.4rpx;">LV.50</view>
+          <view>
+            <view class="">{{nowlv.skill50}}</view>
+            <view class="marginpx">{{nowlv.skill50_info}}</view>
+          </view>
+        </view>
+        <!-- 65~80 -->
+        <view class="media marginpx" wx:if="{{nowlv.skill65}}">
+          <view class="font-size-title col-auto font-weight-light" style="flex: 0 0 72.4rpx;">LV.65</view>
+          <view>
+            <view class="">{{nowlv.skill65}}</view>
+            <view class="marginpx">{{nowlv.skill65_info}}</view>
+          </view>
+        </view>
+        <view class="media marginpx" wx:if="{{nowlv.skill80}}">
+          <view class="font-size-title col-auto font-weight-light" style="flex: 0 0 72.4rpx;">LV.80</view>
+          <view>
+            <view class="">{{nowlv.skill80}}</view>
+            <view class="marginpx">{{nowlv.skill80_info}}</view>
+          </view>
+        </view>
+
+
+
+      </view>
+
+
+
+    </view>
+
+    <!-- 装备 -->
+    <view style="{{view_equipment}};">
+
+    </view>
+
+    <!-- 服装 -->
+    <view style="{{view_clothing}};">
+
+    </view>
+
+    <!-- 饰品 -->
+    <view style="{{view_ornament}};">
+
+    </view>
+
+
+    <view class="divLine"></view>
+
+
+
+  </view>
+</view>
